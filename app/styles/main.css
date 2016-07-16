@@ -86,4 +86,32 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.contacts-form, .current-contact, .contacts-list {
+  background-color: wheat;
+}
+label, input, button {
+  display: block;
+  padding: 2px;
+
+}
+input {
+  width: 350px;
+}
+
+
+@media screen and (min-width: 992px) {
+  .current-contact {
+    margin-top: 60px;
+    }
+}
+
+.submit-contact {
+  margin-top: 10px;
 }
