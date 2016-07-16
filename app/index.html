@@ -34,8 +34,14 @@
           <input type="text" name="firstName" id="firstName" required/>
           <label for="lastName">Last name</label>
           <input type="text" name="lastName" id="lastName" required>
-          <label for="phoneNumber">Phone number</label>
+          <label for="phoneNumber">
+          Phone number
+          <!-- <button type="button" id="add-phone" class="btn btn-primary">Add Phone Number</button> -->
+          </label>
           <input type="tel" name="phoneNumber" id="phoneNumber" required>
+          <!-- <label class="phone-label" for="phoneNumber2">Second Phone number</label>
+          <input type="text" name="phoneNumber2" id="phoneNumber2"> -->
+
           <label for="street">Street</label>
           <input type="text" name="street" id="street" required>
           <label for="city">City</label>
@@ -46,13 +52,15 @@
         </form>
       </div>
 
-
-      <div class="contacts-list col-xs-12">
+      <div class="clearfix visible-md-block visible-lg-block"></div>
+      <div class="contacts-list col-xs-12 col-md-6">
         <h1>Contacts:</h1>
         <ul class="contacts-ul">
         </ul>
       </div>
-      <div class="current-contact col-xs-12 col-md-6">
+      <div class="current-contact col-xs-12 col-md-5 col-md-offset-5 col-md-push-1">
+      <ul class="address-list">
+      </ul>
       </div>
 
     </div>
