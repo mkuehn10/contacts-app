@@ -29,6 +29,10 @@ $(function() {
         contactToAdd.completeName = function() {
             return this.firstName + ' ' + this.lastName;
         };
+
+        contactToAdd.completeAddress = function() {
+            return this.street + ', ' + this.city + ', ' + this.state;
+        }
         // console.log(contactToAdd);
         contacts.push(contactToAdd);
         // console.log(contacts);
@@ -51,10 +55,40 @@ $(function() {
         var contactToDisplay = $(event.target).attr('class');
         for (var prop in contacts[contactToDisplay]) {
             if (typeof contacts[contactToDisplay][prop] !== 'function') {
-                if (prop === 'firstName') {
-                    $('.current-contact').append('<h1>' + contacts[contactToDisplay].completeName() + '</h1>');
+
+                switch(prop) {
+                    case 'firstName': {
+                        $('.current-contact').append('<h1>' + contacts[contactToDisplay].completeName() + '</h1>');
+                        $('.current-contact').append('<p>First Name: ' + contacts[contactToDisplay][prop] + '</p>');
+                        break;
+                    }
+                    case 'lastName': {
+                        $('.current-contact').append('<p>Last Name: ' + contacts[contactToDisplay][prop] + '</p>');
+                        break;
+                    }
+                    case 'phoneNumber': {
+                        $('.current-contact').append('<p>Phone Number: ' + contacts[contactToDisplay][prop] + '</p>');
+                        break;
+                    }
+                    case 'street': {
+                        $('.current-contact').append('<p>Addresses: ' + contacts[contactToDisplay].completeAddress() + '</p>');
+                        break;
+                    }
+                    case 'city': {
+                        // $('.current-contact').append('<p>First Name: ' + contacts[contactToDisplay][prop] + '</p>');
+                    }
+                    case 'state': {
+                        // $('.current-contact').append('<p>First Name: ' + contacts[contactToDisplay][prop] + '</p>');
+                    }
+                    default: {
+                        console.log("Something went wrong!");
+                    }
                 }
-                $('.current-contact').append('<p>' + contacts[contactToDisplay][prop] + '</p>');
+
+                // if (prop === 'firstName') {
+                //     $('.current-contact').append('<h1>' + contacts[contactToDisplay].completeName() + '</h1>');
+                // }
+                // $('.current-contact').append('<p>' + contacts[contactToDisplay][prop] + '</p>');
             }
 
             // contactToAdd[prop] = $('#' + prop).val();

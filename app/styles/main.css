@@ -102,16 +102,42 @@ label, input, button {
 
 }
 input {
-  width: 350px;
+  width: 250px;
 }
 
 
 @media screen and (min-width: 992px) {
   .current-contact {
     margin-top: 60px;
-    }
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .contacts-form {
+    text-align: left;
+  }
 }
+
+@media screen and (min-width: 500px) {
+  input {
+    width: 425px;
+  }
+  .contacts-form {
+    text-align: left;
+  }
+}
+
 
 .submit-contact {
   margin-top: 10px;
 }
+
+
+/*@media screen and (max-width: 499px) {
+  .contacts-form {
+  text-align: center;
+  input {
+    margin: 0 auto;
+  }
+}
+}*/
